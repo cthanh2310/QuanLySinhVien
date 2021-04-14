@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" style="width: 500px; height: 100px; border: 1px;"> 
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Ho Ten</th>
+            <th scope="col">Email</th>
+            <th scope="col"><a href="./them">Thêm</a></th>
+          </tr>
+        </thead>
+        <% danhsach.rows.forEach(function(sinhvien){
+
+         %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= sinhvien.id %></th>
+            <td><%= sinhvien.hoten %></td>
+            <td><%= sinhvien.email %></td>
+            <td><a href="./sua/<%= sinhvien.id %>"> Sửa </a> &emsp;
+            <a href="./xoa/<%= sinhvien.id %>"> Xóa </a>
+            </td>
+          </tr>
+        </tbody>
+        <% }) %>
+      </table>
+</body>
+</html>
